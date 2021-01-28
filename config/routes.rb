@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root 'registrations#index'
+  
   resource :users, controller: 'registrations', only:[:create, :edit, :update] do
     get '/sign_up', action: 'new'
-    get '/home', action: 'index'
   end
 
   resource :users, controller: 'sessions', only:[] do
